@@ -18,7 +18,7 @@ export class HttpRequest {
 
     const head = parts[0];
     if (!head) {
-        throw new Error("invalid http request")
+      throw new Error("invalid http request");
     }
     const body = parts[1] ?? "";
 
@@ -29,7 +29,7 @@ export class HttpRequest {
 
     const requestLineRaw = lines[0];
     if (!requestLineRaw) {
-    throw new Error("Invalid HTTP request line");
+      throw new Error("Invalid HTTP request line");
     }
 
     const requestLine = requestLineRaw.split(" ");

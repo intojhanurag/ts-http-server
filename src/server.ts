@@ -6,11 +6,11 @@ import { HttpStatusCode } from "./http/types.js";
 import { KeepAliveManager } from "./http/keepAlive.js";
 
 const server = net.createServer((socket) => {
-   // TCP connection is established here (3-way handshake has completed)
+  // TCP connection is established here (3-way handshake has completed)
   const buffer = new RequestBuffer();
   const keepAlive = new KeepAliveManager();
 
-  socket.on("data", (chunk:Buffer) => {
+  socket.on("data", (chunk: Buffer) => {
     buffer.append(chunk);
 
     const request = HttpRequest.parse(buffer.toBuffer());

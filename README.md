@@ -1,9 +1,11 @@
 ## HTTP Server from Scratch (TypeScript)
+
 ![Untitled Diagram](https://github.com/user-attachments/assets/fcb77cbf-2f9e-447d-9e8a-eca210da129c)
 
 This project is a learning-focused HTTP server built directly on TCP.
 
 ### Concepts Learned
+
 - TCP 3-way handshake
 - HTTP request/response format
 - Persistent connections (Keep-Alive)
@@ -11,6 +13,7 @@ This project is a learning-focused HTTP server built directly on TCP.
 - Event loop & callbacks
 
 ### Run
+
 ```bash
 npm install
 npm run dev
@@ -33,3 +36,4 @@ TCP connection sends bytes back to client
   │
   ▼
 Client receives HTTP response
+```

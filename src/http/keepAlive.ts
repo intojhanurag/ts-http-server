@@ -12,8 +12,8 @@ export class KeepAliveManager {
     private config: KeepAliveConfig = {
       enabled: true,
       timeoutMs: 60000,
-      maxRequests: 100
-    }
+      maxRequests: 100,
+    },
   ) {}
 
   registerRequest() {

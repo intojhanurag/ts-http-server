@@ -57,17 +57,11 @@ export class ResponseBuilder {
 
   build(): string {
     if (!this.headers.get("Content-Length")) {
-      this.setHeader(
-        "Content-Length",
-        Buffer.byteLength(this.body).toString()
-      );
+      this.setHeader("Content-Length", Buffer.byteLength(this.body).toString());
     }
 
     return (
-      this.statusLine.toString() +
-      this.headers.toString() +
-      "\r\n" +
-      this.body
+      this.statusLine.toString() + this.headers.toString() + "\r\n" + this.body
     );
   }
 }
