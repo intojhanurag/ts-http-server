@@ -1,4 +1,4 @@
-import { HttpMethod } from "./types";
+import { HttpMethod } from "./types.js";
 
 export class HttpRequest {
   method!: HttpMethod;

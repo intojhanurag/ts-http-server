@@ -1,4 +1,4 @@
-import { HttpStatusCode } from "./types";
+import { HttpStatusCode } from "./types.js";
 
 class StatusLine {
   private code!: HttpStatusCode;
@@ -10,6 +10,9 @@ class StatusLine {
   }
 
   toString() {
+    // \r = Carriage return
+    // \n = Line Feed
+    // \r\n means: start a new line in HTTP protocol.
     return `HTTP/1.1 ${this.code} ${this.message}\r\n`;
   }
 }

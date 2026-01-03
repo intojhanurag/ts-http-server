@@ -1,11 +1,12 @@
 import * as net from "net";
-import { RequestBuffer } from "./utils/buffer";
-import { HttpRequest } from "./http/request";
-import { ResponseBuilder } from "./http/response";
-import { HttpStatusCode } from "./http/types";
-import { KeepAliveManager } from "./http/keepAlive";
+import { RequestBuffer } from "./utils/buffer.js";
+import { HttpRequest } from "./http/request.js";
+import { ResponseBuilder } from "./http/response.js";
+import { HttpStatusCode } from "./http/types.js";
+import { KeepAliveManager } from "./http/keepAlive.js";
 
 const server = net.createServer((socket) => {
+   // TCP connection is established here (3-way handshake has completed)
   const buffer = new RequestBuffer();
   const keepAlive = new KeepAliveManager();
 
@@ -25,6 +26,8 @@ const server = net.createServer((socket) => {
       .build();
 
     socket.write(response);
+    // socket.write writes bytes back over the TCP connection
+    // TCP guarantees it arrives at the client reliably
 
     keepAlive.registerRequest();
     if (!keepAlive.shouldKeepAlive()) {

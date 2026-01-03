@@ -14,3 +14,22 @@ This project is a learning-focused HTTP server built directly on TCP.
 ```bash
 npm install
 npm run dev
+
+Client
+  │
+  │ HTTP request (bytes)
+  ▼
+TCP connection (3-way handshake done)
+  │
+  ▼
+Server code (your callback)
+  ├─ Buffer chunks
+  ├─ Parse HTTP request
+  ├─ Build HTTP response
+  └─ socket.write(response)
+  │
+  ▼
+TCP connection sends bytes back to client
+  │
+  ▼
+Client receives HTTP response
