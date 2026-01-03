@@ -1,4 +1,5 @@
 ## HTTP Server from Scratch (TypeScript)
+![Untitled Diagram](https://github.com/user-attachments/assets/fcb77cbf-2f9e-447d-9e8a-eca210da129c)
 
 This project is a learning-focused HTTP server built directly on TCP.
 
